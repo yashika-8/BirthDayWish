@@ -1,0 +1,116 @@
+.App {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 215, 255, 0.5), rgba(255, 193, 203, 0.5));
+  overflow: hidden;
+}
+
+.balloons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.balloons div {
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.8) 0%, rgba(255, 193, 203, 0.5) 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: balloonAnimation 10s infinite;
+}
+
+.balloons div:nth-child(1) { background: #ff69b4; top: 20%; left: 10%; animation-delay: 0s; }
+.balloons div:nth-child(2) { background: #ffa07a; top: 50%; left: 30%; animation-delay: 2s; }
+.balloons div:nth-child(3) { background: #00bfff; top: 80%; left: 50%; animation-delay: 4s; }
+/* Add more balloons if needed */
+
+@keyframes balloonAnimation {
+  0% {
+    transform: translateY(100%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.2);
+  }
+  100% {
+    transform: translateY(-100%) scale(1);
+  }
+}
+
+/* Additional decorations */
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle, rgba(255, 223, 186, 0.8) 0%, rgba(255, 182, 193, 0.5) 70%);
+  animation: confettiAnimation 5s infinite;
+}
+
+@keyframes confettiAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%) rotate(720deg);
+  }
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.stars div {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkling 1.5s infinite;
+}
+
+.stars div:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.stars div:nth-child(2) { top: 30%; left: 40%; animation-delay: 0.5s; }
+.stars div:nth-child(3) { top: 50%; left: 60%; animation-delay: 1s; }
+/* Add more stars if needed */
+
+@keyframes twinkling {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}

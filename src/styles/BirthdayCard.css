@@ -1,0 +1,139 @@
+.birthday-card {
+    background: linear-gradient(135deg, rgba(255, 215, 255, 1) 0%, rgba(255, 193, 203, 1) 100%);
+    border-radius: 20px;
+    padding: 60px; /* Increase padding */
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    max-width: 80%; /* Adjust max width as needed */
+    margin: 50px auto;
+    font-family: 'Comic Sans MS', sans-serif;
+    word-wrap: break-word; /* Ensures long words break to the next line */
+    animation: cardAnimation 4s ease-in-out forwards;
+  }
+  
+  /* Animation for the card appearance */
+  @keyframes cardAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Party poppers animation */
+  @keyframes partyPoppers {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Pseudo-elements for party poppers effect */
+  .birthday-card::before,
+  .birthday-card::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.6) 0%, rgba(255, 193, 203, 0) 70%);
+    opacity: 0;
+    pointer-events: none;
+    animation: partyPoppers 3s infinite;
+  }
+  
+  .birthday-card::before {
+    top: -50px;
+    left: -50px;
+    animation-delay: 0s;
+  }
+  
+  .birthday-card::after {
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 1.5s;
+  }
+  
+  /* Text and button styling */
+  .animated-text {
+    font-size: 3rem; /* Increase font size */
+    color: #ff69b4;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+    animation: textAnimation 4s ease-in-out forwards;
+    display: inline-block;
+    line-height: 1.4;
+  }
+  
+  .message-text {
+    font-size: 1.5rem; /* Increase font size */
+    margin: 20px 0;
+    color: #fff;
+    line-height: 1.5;
+  }
+  
+  .copy-link-button {
+    background-color: #ff4081;
+    color: white;
+    padding: 12px 24px; /* Increase padding */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem; /* Increase font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .copy-link-button:hover {
+    background-color: #ff80ab;
+  }
+  
+  @keyframes textAnimation {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes lettersAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animated-text span {
+    display: inline-block;
+    opacity: 0;
+    animation: lettersAnimation 0.5s ease forwards;
+  }
+  
+  .animated-text span:nth-child(1) { animation-delay: 0.1s; }
+  .animated-text span:nth-child(2) { animation-delay: 0.2s; }
+  .animated-text span:nth-child(3) { animation-delay: 0.3s; }
+  /* Continue for each letter */
+  

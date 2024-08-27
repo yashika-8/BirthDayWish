@@ -1,0 +1,65 @@
+.birthday-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #ff99cc, #ffcc99);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .form-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #ff6666;
+  }
+  
+  .form {
+    width: 100%;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border: 2px solid #ff99cc;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #ff66b2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .submit-button:hover {
+    background: #ff3399;
+    transform: scale(1.05);
+  }
+  
+  .submit-button:active {
+    transform: scale(0.95);
+  }
+  
